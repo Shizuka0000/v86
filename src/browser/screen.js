@@ -329,8 +329,8 @@ function ScreenAdapter(screen_container, bus)
         graphical_mode_width = width;
         graphical_mode_height = height;
 
-        // add some scaling to tiny resolutions
-        if(graphical_mode_width <= 640)
+        // add some scaling to tiny resolutions when browser window > resolution * 2
+        if(graphical_mode_width <= 640 && window.screen.width > graphical_mode_width * 2)
         {
             base_scale = 2;
         }
